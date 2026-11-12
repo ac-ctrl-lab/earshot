@@ -1,6 +1,6 @@
 """Export the SQL analysis views as static JSON for the website.
 
-The site is static (Firebase Hosting), so all heavy lifting happens here, once per run.
+The site is static (GitHub Pages), so all heavy lifting happens here, once per run.
 Cost and ranking math stays in the browser, because it depends on the user's sliders.
 """
 

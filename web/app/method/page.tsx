@@ -7,7 +7,7 @@ const STEPS = [
   ["Cluster", "Each narrative becomes a vector (TF-IDF and SVD, or sentence embeddings). HDBSCAN finds recurring issues and leaves outliers out."],
   ["Label", "Claude names each cluster and drafts a likely cause, a suggested action and an owning team. Results are cached."],
   ["Analyze", "SQL views compute zero-filled monthly counts, rolling growth, z-score spikes and peer benchmarks with window functions."],
-  ["Explore", "A static site on Firebase. Costs, rankings and what-if scenarios recompute in the browser as you change assumptions."],
+  ["Explore", "A static site on GitHub Pages. Costs, rankings and what-if scenarios recompute in the browser as you change assumptions."],
 ];
 
 export default function Method() {

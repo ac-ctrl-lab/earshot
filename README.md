@@ -29,7 +29,7 @@ CFPB API ──► Python ingest ──► Postgres (Supabase)
                                    │
                          static JSON export
                                    │
-             Next.js static site on Firebase Hosting
+             Next.js static site on GitHub Pages
              (cost model + rankings recompute in the browser)
 ```
 
@@ -70,17 +70,18 @@ cd ../web && npm run build
 
 The first real run downloads three years of complaints for the product and picks the 8 largest companies. Clustering parameters were tuned on the demo data; check the printed cluster count and adjust `EARSHOT_MERGE_SIM` in `.env` if issues look over- or under-merged.
 
-### 3. Deploy to Firebase
+### 3. Publish
+
+Every push to `main` builds the site and publishes it to GitHub Pages (`.github/workflows/deploy.yml`).
+After loading real data, commit the regenerated `web/public/data/` and push:
 
 ```bash
-npm install -g firebase-tools
-firebase login
-firebase use --add               # pick or create your project
-cd web && npm run build && cd ..
-firebase deploy --only hosting
+git add web/public/data pipeline/labels_cache.json
+git commit -m "Load real CFPB data"
+git push
 ```
 
-`.github/workflows/refresh.yml` refreshes the data and redeploys weekly once the repo secrets it lists are set.
+One-time setup: repo Settings > Pages > Source: GitHub Actions.
 
 ## The cost model
 
