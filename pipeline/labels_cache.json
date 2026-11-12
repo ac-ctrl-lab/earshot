@@ -1,0 +1,98 @@
+{
+  "0090a96b0bbd": {
+    "label": "Identity verification rejection loop",
+    "owner_team": "Identity & onboarding",
+    "root_cause": "Likely a verification vendor's automated checks failing on certain documents with no manual-review fallback.",
+    "source": "claude",
+    "suggested_action": "Route users after two failed attempts to manual review and track rejection rates by document type.",
+    "summary": "Customers repeatedly upload valid ID and selfies, get rejected each time, and cannot reach a person for manual review."
+  },
+  "1068f4e62426": {
+    "label": "Fees kept on failed instant transfers",
+    "owner_team": "Engineering reliability",
+    "root_cause": "Likely the fee is charged when the transfer starts and the refund is not triggered when it fails.",
+    "source": "claude",
+    "suggested_action": "Refund instant fees automatically whenever a transfer fails or misses the promised delivery time.",
+    "summary": "Instant transfers to banks fail or arrive days late, but the instant fee is not refunded."
+  },
+  "5a1d50920305": {
+    "label": "Accounts closed with no reason given",
+    "owner_team": "Risk & compliance",
+    "root_cause": "Likely risk-driven closures with no customer-facing explanation and a slow process for returning funds.",
+    "source": "claude",
+    "suggested_action": "Return remaining balances within a fixed number of days and give a reason category for every closure.",
+    "summary": "Long-time customers find their accounts closed without warning, with remaining balances not returned."
+  },
+  "637f3a32cd51": {
+    "label": "Funds frozen without a timeline",
+    "owner_team": "Risk & compliance",
+    "root_cause": "Likely risk-review holds without a service-level target or a reason that can be shared with the customer.",
+    "source": "claude",
+    "suggested_action": "Set a review deadline for every hold and tell customers what is needed to release funds.",
+    "summary": "Balances are held, sometimes for 180 days, while customers send every document requested and get no explanation."
+  },
+  "76d30dc1fac9": {
+    "label": "Account takeovers via contact changes",
+    "owner_team": "Fraud & trust",
+    "root_cause": "Likely contact-detail changes from a new device do not trigger step-up verification or a cooling-off period.",
+    "source": "claude",
+    "suggested_action": "Require step-up verification and a 24-hour hold on payouts after contact details change from a new device.",
+    "summary": "Attackers change the email and phone number on an account, then drain the balance and linked bank account."
+  },
+  "8d7e117a689e": {
+    "label": "P2P scam refunds denied",
+    "owner_team": "Fraud & trust",
+    "root_cause": "Likely refund policy treats every authorized push payment as final, with no scam-specific review or pre-payment warning.",
+    "source": "claude",
+    "suggested_action": "Add real-time warnings for payments to new or flagged recipients, and a scam-specific claims review.",
+    "summary": "Customers tricked into sending money to scammers are denied refunds because they authorized the payment themselves."
+  },
+  "8e3a6ed76bc6": {
+    "label": "Hidden FX markups and fees",
+    "owner_team": "Pricing & disclosures",
+    "root_cause": "Likely an exchange-rate markup that is not itemized on the confirmation screen.",
+    "source": "claude",
+    "suggested_action": "Show the exchange rate, markup and total fee side by side on the confirmation screen.",
+    "summary": "The amount received abroad is lower than shown before confirmation, because fees are folded into the exchange rate."
+  },
+  "aff48d63326b": {
+    "label": "International transfers delayed for days",
+    "owner_team": "Payments product",
+    "root_cause": "Likely compliance screening that asks for recipient information after the money has been sent, stalling the transfer.",
+    "source": "claude",
+    "suggested_action": "Collect recipient details before sending, and show a live delivery estimate that updates when screening starts.",
+    "summary": "Money sent abroad stays pending well past the promised delivery time, often after late requests for recipient details."
+  },
+  "bbbc6b1bdf6f": {
+    "label": "Payments sent to the wrong person",
+    "owner_team": "Payments product",
+    "root_cause": "Likely no recipient name confirmation before sending and no recall process for mistaken payments.",
+    "source": "claude",
+    "suggested_action": "Show the recipient's full name before sending and offer a short recall window for new recipients.",
+    "summary": "A mistyped number or wrong autofilled contact sends money to a stranger, and the company says it cannot reverse it."
+  },
+  "c4daa8567692": {
+    "label": "Crypto withdrawals stuck pending",
+    "owner_team": "Crypto product",
+    "root_cause": "Likely a withdrawal queue paused by risk holds or extra verification that customers are not told about.",
+    "source": "claude",
+    "suggested_action": "Tell customers why a withdrawal is paused and the expected resolution time, and alert after 48 hours.",
+    "summary": "Withdrawals to external wallets sit in processing for days or weeks while support sends automated replies."
+  },
+  "cd5dd90765ba": {
+    "label": "No way to reach a human",
+    "owner_team": "Customer support",
+    "root_cause": "Likely support deflection targets that leave no escalation path for complex cases.",
+    "source": "claude",
+    "suggested_action": "Add a guaranteed human escalation path for cases unresolved after two contacts, and measure reopen rates.",
+    "summary": "Customers loop between a chatbot, an app and a phone line that redirect to each other, and tickets close unanswered."
+  },
+  "efc4a1d79e21": {
+    "label": "Merchant disputes closed against buyer",
+    "owner_team": "Risk & compliance",
+    "root_cause": "Likely an automated dispute rule that accepts any merchant tracking upload as proof of delivery.",
+    "source": "claude",
+    "suggested_action": "Require tracking to be validated with the carrier before a dispute can close in the merchant's favor.",
+    "summary": "Buyers who never received an item, or got a counterfeit, say disputes are closed in the merchant's favor without their evidence being reviewed."
+  }
+}
