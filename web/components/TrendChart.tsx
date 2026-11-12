@@ -22,7 +22,7 @@ export default function TrendChart({ months, actual, expected, current }: Props)
   return (
     <div>
       <div className="flex gap-5 text-[12px] text-ink-2 mb-2">
-        <span className="flex items-center gap-2"><i className="inline-block w-4 h-[2px] bg-ink" />This company</span>
+        <span className="flex items-center gap-2"><i className="inline-block w-4 h-[2px] bg-heat-5" />This company</span>
         <span className="flex items-center gap-2"><i className="inline-block w-4 border-t-2 border-dashed border-inline" />At peers&rsquo; rate</span>
       </div>
       <div className="relative">
@@ -47,19 +47,19 @@ export default function TrendChart({ months, actual, expected, current }: Props)
           {yearTicks.map(([m, i]) => (
             <text key={m} x={x(i)} y={H - 8} textAnchor="middle" fontSize={11} className="fill-ink-3">{m.slice(0, 4)}</text>
           ))}
-          <line x1={x(current)} x2={x(current)} y1={M.top} y2={H - M.bottom} stroke="var(--color-accent)" strokeOpacity={0.35} strokeWidth={2} />
+          <line x1={x(current)} x2={x(current)} y1={M.top} y2={H - M.bottom} stroke="var(--color-ink)" strokeOpacity={0.5} strokeWidth={2} />
           <path d={path(expected)} fill="none" stroke="var(--color-inline)" strokeWidth={2} strokeDasharray="5 5" />
-          <path d={path(actual)} fill="none" stroke="var(--color-ink)" strokeWidth={2} strokeLinejoin="round" />
+          <path d={path(actual)} fill="none" stroke="var(--color-heat-5)" strokeWidth={2} strokeLinejoin="round" />
           {hover !== null && (
             <g>
-              <line x1={x(hover)} x2={x(hover)} y1={M.top} y2={H - M.bottom} stroke="#c7c7cc" />
-              <circle cx={x(hover)} cy={y(actual[hover])} r={4.5} fill="var(--color-ink)" stroke="#fff" strokeWidth={2} />
+              <line x1={x(hover)} x2={x(hover)} y1={M.top} y2={H - M.bottom} stroke="var(--color-ink-3)" />
+              <circle cx={x(hover)} cy={y(actual[hover])} r={4.5} fill="var(--color-heat-5)" stroke="var(--color-panel)" strokeWidth={2} />
             </g>
           )}
         </svg>
         {hover !== null && (
           <div
-            className="pointer-events-none absolute top-0 card px-3 py-2 text-[12px] whitespace-nowrap"
+            className="pointer-events-none absolute top-0 panel bg-raised shadow-xl px-3 py-2 text-[12px] whitespace-nowrap"
             style={{ left: `${(x(hover) / W) * 100}%`, transform: `translateX(${hover > months.length * 0.6 ? "-110%" : "10px"})` }}
           >
             <div className="font-semibold mb-1">{fmtMonth(months[hover])}</div>
