@@ -9,3 +9,11 @@ web/next-env.d.ts
 web/tsconfig.tsbuildinfo
 .firebase/
 .DS_Store
+.env.*
+!.env.example
+.venv/
+venv/
+*.log
+npm-debug.log*
+.vscode/
+.idea/

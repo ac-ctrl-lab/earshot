@@ -105,3 +105,7 @@ Defaults: 25 contacts per complaint, $9 per contact, 6% churn, $140 revenue per 
 - Ask the data: plain-English questions translated to SQL, with the query shown
 - All CFPB products, and a weekly emailed briefing per company
 - Backtest: how many weeks earlier Earshot would have flagged past issues
+
+## License
+
+MIT. CFPB complaint data is public and published by the Consumer Financial Protection Bureau.
